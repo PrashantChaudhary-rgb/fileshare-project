@@ -11,11 +11,11 @@ connectDB();
 app.use(express.static('public'));
 app.use(express.json());
 
-// const cors=require('cors');
-// const corsOptions={
-//     origin:process.env.ALLOWED_CLIENTS
-// }
-// app.use(cors(corsOptions));
+const cors=require('cors');
+const corsOptions={
+    origin:process.env.ALLOWED_CLIENTS.split(',')
+}
+app.use(cors(corsOptions));
 
 
 
