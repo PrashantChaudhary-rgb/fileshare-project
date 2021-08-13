@@ -16,6 +16,10 @@ let upload = multer({ storage, limits: { fileSize: 1000000 * 100 }, }).single('m
 
 router.post('/', (req, res) => {
     res.setHeader('Access-Control-Allow-Origin', '*');
+    res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE'); // If needed
+    res.setHeader('Access-Control-Allow-Headers', 'X-Requested-With,content-type'); // If needed
+    res.setHeader('Access-Control-Allow-Credentials', true); // If needed
+
     upload(req, res, async (err) => {
 
         if (err) {
