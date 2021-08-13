@@ -13,7 +13,7 @@ app.use(express.json());
 
 const cors=require('cors');
 const corsOptions={
-    origin:process.env.ALLOWED_CLIENTS.split(',')
+    origin:process.env.ALLOWED_CLIENTS
 }
 app.use(cors(corsOptions));
 
