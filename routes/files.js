@@ -15,6 +15,7 @@ let storage = multer.diskStorage({
 let upload = multer({ storage, limits: { fileSize: 1000000 * 100 }, }).single('myfile'); //100mb
 
 router.post('/', (req, res) => {
+    res.setHeader('Access-Control-Allow-Origin', '*');
     upload(req, res, async (err) => {
 
         if (err) {
