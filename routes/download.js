@@ -24,7 +24,7 @@ router.get('/:uuid', async (req, res) => {
       
             const filepath=`${__dirname}/../${file.path}`;
         console.log('file path lene ke baad');
-       console.log('filepath');
+       console.log(filepath);
             res.download(filepath);
         } catch(err) {
             return res.render('download', { error: 'Something went wrong.'});
