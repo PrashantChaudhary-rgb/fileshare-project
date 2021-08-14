@@ -3,6 +3,7 @@ const File = require('../models/file');
 const path = require('path');
 
 router.get('/:uuid', async (req, res) => {
+   console.log('download route mai');
    
     try {
          res.setHeader('Access-Control-Allow-Origin', '*');
