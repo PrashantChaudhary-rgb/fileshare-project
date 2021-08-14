@@ -7,11 +7,11 @@ const { v4: uuid4 } = require('uuid');
 let storage = multer.diskStorage({
     destination: (req, file, cb) => cb(null, 'uploads/'),
     
-         filename: function (req, file, cb) {
+    filename: function (req, file, cb) {
         cb(null , file.originalname);
     }
-    },
 });
+
 
 let upload = multer({ storage, limits: { fileSize: 1000000 * 100 }, }).single('myfile'); //100mb
 
